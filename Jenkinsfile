@@ -6,7 +6,7 @@ pipeline {
         
         // GitHub 계정정보
         GIT_TARGET_BRANCH = 'main'
-        GIT_REPOSITORY_URL = 'https://github.com/csejh1/fast'
+        GIT_REPOSITORY_URL = 'git@github.com:csejh1/fast.git'
         GIT_CREDENTIALS_ID = 'git_crd' // 오타 수정 (CREDENTIONALS -> CREDENTIALS)
         GIT_EMAIL = 'jerrysong4912@gmail.com'
         GIT_NAME = 'csejh1'
