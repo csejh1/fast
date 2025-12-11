@@ -8,7 +8,9 @@ pipeline {
         GIT_TARGET_BRANCH = 'main'
         GIT_REPOSITORY_URL = 'https://github.com/csejh1/fast'
         GIT_CREDENTIONALS_ID = 'git_crd'
-
+        GIT_EMAIL = 'jerrysong4912@gmail.com'
+        GIT_NAME = 'csejh1'
+        GIT_REPOSITORY_DEP = 'git@github.com:csejh1/fast.git'
 
         // AWS ECR 정보. 본인껄로 넣으세요!!
         AWS_ECR_CREDENTIAL_ID = 'aws_crd'
@@ -69,6 +71,24 @@ pipeline {
                     }
                 }
             }
+        stage('5.EKS manifest file update') {
+            steps {
+                git credentialsId: GIT_CREDENTIONALS_ID, url: GIT_REPOSITORY_DEP, branch: 'main'
+                script {
+                    '''
+                    git config --global user.email ${GIT_EMAIL}
+                    git config --global user.name ${GIT_NAME}
+                    sed -i 's@${AWS_ECR_URI}/${AWS_ECR_IMAGE_NAME}:.*@${AWS_ECR_URI}/${AWS_ECR_IMAGE_NAME}:${BUILD_NUMBER}@g' test-dep.yml
+                    git add .
+                    git branch -M main
+                    git commit -m 'fixed tag ${BUILD_NUMBER}'
+                    git remote remove origin
+                    git remote add origin ${GIT_REPOSITORY_DEP}
+                    git push origin main
+                    '''
+                }
+
+            }            
             post {
                 failure {
                     script {
