@@ -1,12 +1,12 @@
 name: fast CI/CD
 
 
-on: # on 언제 action을 동작시킬지
-  push: # push가 됐을때 동작시키겠다.
-    branches: [main] # 대상 브랜치.
-    paths-ignore: # push 이벤트가 발생해도 무시할 파일.
-    - '.gitignore'
-    - '.dockerignore'
+#on: # on 언제 action을 동작시킬지
+#  push: # push가 됐을때 동작시키겠다.
+#    branches: [main] # 대상 브랜치.
+#    paths-ignore: # push 이벤트가 발생해도 무시할 파일.
+#    - '.gitignore'
+#    - '.dockerignore'
 
 jobs:
   ci:
