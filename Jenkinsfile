@@ -6,7 +6,7 @@ pipeline {
         
         // GitHub 계정정보
         GIT_TARGET_BRANCH = 'main'
-        GIT_REPOSITORY_URL = 'git@github.com:csejh1/fast.git'
+        GIT_REPOSITORY_URL = 'https://github.com/csejh1/fast.git'
         GIT_CREDENTIALS_ID = 'git_crd' // 오타 수정 (CREDENTIONALS -> CREDENTIALS)
         GIT_EMAIL = 'jerrysong4912@gmail.com'
         GIT_NAME = 'csejh1'
@@ -14,7 +14,7 @@ pipeline {
         // 중요: 배포용 레포지토리도 HTTPS 주소를 권장합니다 (Credential 재사용을 위해)
         // SSH(git@...)를 쓰려면 Jenkins에 SSH 키가 등록되어 있어야 합니다.
         // 여기서는 편의상 HTTPS로 통일하여 작성했습니다.
-        GIT_REPOSITORY_DEP_URL = 'https://github.com/csejh1/fast.git' 
+        GIT_REPOSITORY_DEP_URL = 'git@github.com:csejh1/ArgoRepo.git' 
 
         // AWS ECR 정보
         AWS_ECR_CREDENTIAL_ID = 'aws_crd'
