@@ -6,13 +6,13 @@ pipeline {
         
         // GitHub 계정정보. 본인껄로 넣으세요!!
         GIT_TARGET_BRANCH = 'main'
-        GIT_REPOSITORY_URL = 'https://github.com/oolralra/fast'
-        GIT_CREDENTIONALS_ID = 'git_cre'
+        GIT_REPOSITORY_URL = 'https://github.com/csejh1/fast'
+        GIT_CREDENTIONALS_ID = 'git_crd'
 
 
         // AWS ECR 정보. 본인껄로 넣으세요!!
-        AWS_ECR_CREDENTIAL_ID = 'aws_cre'
-        AWS_ECR_URI = '865577889736.dkr.ecr.ap-northeast-2.amazonaws.com' // 레지스트리주소
+        AWS_ECR_CREDENTIAL_ID = 'aws_crd'
+        AWS_ECR_URI = '967361137282.dkr.ecr.ap-northeast-2.amazonaws.com' // 레지스트리주소
         AWS_ECR_IMAGE_NAME = 'fast' // 레포지토리이름.
         AWS_REGION = 'ap-northeast-2'
         
